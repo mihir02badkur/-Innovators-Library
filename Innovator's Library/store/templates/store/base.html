@@ -1,0 +1,481 @@
+<html>
+
+<head>
+
+    {% load static %}
+    {% block title %}
+    <title>Library</title>
+    {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    {% block style %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500;600&family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/utils.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    {% endblock style %}
+
+    <style>
+        /* Resp */
+        .tol img {
+            height: 1.3em;
+            {% comment %} margin: 3.5vh 0px; {% endcomment %}
+            {% comment %} border-radius: 10px; {% endcomment %}
+        }
+
+        .burg {
+            color: rgb(255, 255, 255);
+            position: absolute;
+            top: 3.4vh;
+            right: 2%;
+            /* font-size: 7vh; */
+            /* font-weight: 700; */
+            cursor: pointer;
+        }
+
+        .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-8px, 6px);
+            transform: rotate(-45deg) translate(-8px, 6px);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-8px, -7px);
+            transform: rotate(45deg) translate(-8px, -7px);
+        }
+
+        .hei {
+            height: 88px;
+        }
+
+        .in-media {
+            display: none;
+        }
+
+        .naam {
+            color: rgb(182, 182, 182);
+            font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 500;
+            font-size: 100%;
+            transition: all 0.1s linear;
+        }
+
+        .tol_div{
+            display: flex;
+            justify-content: center;
+            align-items: baseline ;
+            align-self: center;
+            justify-self: center;
+        }
+
+        .mihir2, .gour2{
+            display:none;
+        }
+
+        .profile-card{
+    position: relative;
+    width: 220px;
+    height: auto;
+    background: #fff;
+    padding: 30px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 22px #3336;
+    transition: .6s;
+    margin:25px;
+    box-shadow: 0px 0px 20px #12eddce6;
+    /*box-shadow: inset 0px 0px 126px 0px #0c4af88c;*/
+  }
+  /* .profile-card:hover{
+    border-radius: 10px;
+    height: 260px;
+  } */
+  .profile-card .img{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: .6s;
+    z-index: 99;
+    transform: translateY(-60px);
+    
+  }
+  /* .profile-card:hover .img{
+    transform: translateY(-80px);
+  } */
+  .img img{
+    width: 100%;
+    border-radius: 50%;
+    /* box-shadow: 0 0 22px #3336; */
+    box-shadow: 0 0 22px rgba(14, 152, 233, 0.705);
+    transition: .6s;
+  }
+  .caption{
+    text-align: center;
+    transform: translateY(-50px);
+    opacity: 1;
+    transition: .6s;
+  }
+  .caption h3{
+    font-size: 21px;
+  }
+  .caption p{
+    font-size: 16px;
+    color: #0c52a1;
+    margin: 5px 0 12px 0;
+    font-weight: 600;
+  }
+
+  .img::after{
+      content:"Tap on the image";
+      color: black;
+      font-size: 10px;
+      text-align: center;
+      margin-top:5px ;
+      text-decoration: none;
+  }
+
+        @media screen and (max-width:800px) {
+
+            /* body{
+            background-color: #2196f3;
+        } */
+            .burg {
+                display: block;
+            }
+
+            header {
+                height: 40vh;
+                transition: height 0.3s linear;
+                padding-bottom: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            .tol{
+                margin-top:10px;
+            }
+
+            .vis {
+                opacity: 0;
+            }
+
+            .out-media {
+                display: none;
+            }
+
+            .in-media {
+                display: block;
+                margin-top: 8px;
+                position: relative;
+                left: -35%;
+            }
+
+            .loginbut {
+                margin: auto;
+                display: block;
+                right: -8%;
+                position: relative;
+            }
+
+            .footer>h2{
+                border: 5px solid white;
+                padding: 7px;
+            }
+
+            nav ul li a {
+                color: white;
+            }
+
+            .naam {
+                color: white;
+            }
+
+            .sec1 {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .sec-cont-para p {
+                width: auto;
+            }
+
+            .sec-img img {
+                width: 21em;
+            }
+
+            .showcase .grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
+            }
+
+            .con-details {
+                padding-top: 90%;
+                padding-bottom: 11%;
+            }
+
+            .containerr {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .circle {
+                display: none;
+            }
+            .det{
+                margin-top:25%;
+            }
+            .languages .card{
+                min-height:45%;
+            }
+            .mihir2, .gour2{
+            display:block;
+            }
+            .mihir1, .gour1{
+            display:none;
+            }
+
+        }
+        @media screen and (max-width:330px) {
+            .det{
+                margin-top:45%;
+            }
+            .sec-img img {
+                width: 19em;
+            }
+        }
+    </style>
+
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/070428bd88.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% block sidebar %}
+    <header class="hei" id="header">
+        <nav class="" id="navbar">
+            <div class="logo in-media">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'img/apnalogo.png' %}" alt="Logo">
+                </a>
+            </div>
+            <ul class="tol">
+                <div class="logo out-media">
+                    <a href="{% url 'index' %}">
+                        <img src="{% static 'img/apnalogo.png' %}" alt="Logo">
+                    </a>
+                </div>
+                <div class='tol_div'><span><img src="{% static 'img/house.png' %}" alt="" style="position: relative;left: 35%;"></span>
+                <li><a href="{% url 'index' %}">Home</a></li></div>
+                <div class='tol_div'><span><img src="{% static 'img/about.png' %}" alt="" style="position: relative;left: 35%;"></span>
+                <li><a href="#foot">About</a></li></div>
+                <div class='tol_div'><span><img src="{% static 'img/bookshelf.png' %}" alt="" style="position: relative;left: 35%;"></span>
+                <li><a href="{% url 'book-list' %}">All Books</a></li></div>
+            </ul>
+            <div class="ser">
+                <input type="text" name="Search" id="search-box" placeholder="Search Here" value="">
+                <button type="submit" class="head-btn" onclick="ser()">
+                    <img class='mag' src="https://img.icons8.com/ios-filled/200/fa314a/search--v1.png" />
+                </button>
+            </div>
+            {% if user.is_authenticated %}
+            <ul class="tor">
+                <span><img src="{% static 'img/man.png' %}" alt=""></span>
+                <!-- <img src="man.png" alt=""> -->
+                <li class="naam">{{ user.first_name }}</li>
+                <span><img src="{% static 'img/shopping-cart.png' %}" alt=""></span>
+                <li><a href="{% url 'view-loaned' %}">My Borrowed</a></li>
+                <li><button class="hehelog1"><a href="{% url 'logout' %}">Logout</a></button></li>
+
+
+                {% else %}
+
+                <li class="loginbut"><button class="hehelog "><a href="/userAccounts/login">Login</a></button></li>
+            </ul>
+
+            {% endif %}
+        </nav>
+        <div class="burg">
+            <div class="container" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+        {% endblock %}
+    </header>
+    {% comment %} {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}alert-dismissible fade show my-0  " role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        {% endfor %}
+    </div>
+    {% endif %} {% endcomment %}
+    <div class="col-sm-10 ">
+        {% block content %}{% endblock %}
+    </div>
+    <footer class="footer  py-5" style="background: #14202b;" id="foot">
+
+        <h2 style="text-align:center;margin-bottom: 50px;">Connect With Us</h2>
+        <div class="ftdraw">
+
+            <div class="profile-card">
+            <a href="https://www.snapchat.com/add/mihir02badkur?share_id=wcXYoyWDjqo&locale=en-IN" target="_blank"><div class="img">
+                <img src="{% static 'img/mihir.jpg' %}">
+            </div></a>
+            <div class="caption">
+                <h3 style="color: #090b64;font-family: 'Roboto';font-weight: 600;">Mihir Badkur</h3>
+                <p>Sedulous</p>
+                <div class="drawer">
+                    <div class="box">
+                        <a href="https://www.instagram.com/_mihir02badkur_/" target="_blank"
+                            class="ball ball-1 twitter"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://github.com/mihir02badkur" target="_blank" class="ball ball-2 github"><i
+                                class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.facebook.com/mihir.badkur" target="_blank" class="ball ball-3 facebook"><i
+                                class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="cover"><span></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="profile-card">
+            <a href="https://www.snapchat.com/add/evilish_inside?share_id=RQ2SLXDA3lI&locale=en-US" target="_blank"><div class="img">
+                <img src="{% static 'img/gour.jpg' %}">
+            </div></a>
+            <div class="caption">
+                <h3 style="color: #090b64;font-family: 'Roboto';font-weight: 600;">Gourav Kumar</h3>
+                <p>Gregarious</p>
+                <div class="drawer">
+                    <div class="box">
+                        <a href="https://www.instagram.com/itz_gk_gourav/" target="_blank"
+                            class="ball ball-1 twitter"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://github.com/Gourav-Kr" target="_blank" class="ball ball-2 github"><i
+                                class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100064851593267" target="_blank"
+                            class="ball ball-3 facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="cover"><span></span></div>
+                </div>
+                {% comment %} <span style="border: 2.9px solid;border-radius: 2px;padding: 11px 16px;border-color: #f0f0f0;font-family: roboto; background: #2196f3;position: relative;top: -57px;z-index: 1;left: 1.9px;box-shadow: 0 0 0px 1px white;" class="gour1">Hover to connect</span>
+                <span style="border: 2.5px solid;border-radius: 2px;padding: 9px;border-color: #f0f0f0;font-family: roboto; background: #2196f3;position: relative;top: -69px;z-index: 1;left: 2px;" class="gour2">Tap to connect</span> {% endcomment %}
+            </div>
+            
+        </div>
+        
+    </footer>
+    <script src="{% static 'js/resp.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed('#typed', {
+            stringsElement: '#typed-strings',
+            typeSpeed: 40,
+            backSpeed: 20,
+            backDelay: 500,
+            startDelay: 1000,
+            loop: true,
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        console.log('slider')
+        $(document).ready(function () {
+            $('.slider').slick({
+                dots: false,
+                // arrows:true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1900,
+                // centerMode: true,
+                // centerPadding: '60px',
+                responsive: [{
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
+            });
+        });
+    </script>
+    <script>
+        bgr = document.querySelector('.burg')
+        // tor_l = document.querySelector('.tor_l')
+        tol = document.querySelector('.tol')
+        tor = document.querySelector('.tor')
+        head = document.querySelector('#header')
+        // serc = document.querySelector(".ser")
+
+        bgr.addEventListener('click', () => {
+            head.classList.toggle('hei');
+            head.classList.toggle('bg')
+            // serc.classList.toggle('vis');
+            // tor_l.classList.toggle('vis');
+            // tor.classList.toggle('vis');
+            // tol.classList.toggle('vis');
+        })
+    </script>
+
+</body>
+
+</html>

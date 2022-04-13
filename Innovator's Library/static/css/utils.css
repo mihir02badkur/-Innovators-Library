@@ -1,0 +1,254 @@
+.flex-centre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.container {
+    max-width: 100vw;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+  
+.card {
+    background-color: rgb(255, 255, 255);
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(206, 206, 206, 0.877);
+    padding:1em ;
+    margin: 10px;
+    height: 10em;
+    width: 10em;
+}
+
+.languages .flex {
+    flex-wrap: wrap;
+}
+  
+.languages .card {
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in;
+  }
+
+.languages .card h4 {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Roboto, Geneva, Tahoma, sans-serif;
+    margin-bottom: 10px;
+  }
+  
+.languages .card:hover {
+    transform: translateY(-15px);
+}
+  
+
+.burg{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 1.4vh;
+    right: 25px;
+    /* font-size: 7vh; */
+    /* font-weight: 700; */
+    /* display: none; */
+    cursor: pointer;
+}
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+  }  
+  .bar1, .bar2, .bar3 {
+    width: 30px;
+    height: 4px;
+    background-color: rgb(255, 255, 255);
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-8px, 6px) ;
+    transform: rotate(-45deg) translate(-8px, 6px) ;
+  }
+  .change .bar2 {
+    opacity: 0;
+  }
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -7px) ;
+    transform: rotate(45deg) translate(-8px, -7px) ;
+  }
+
+.logo{
+    display: flex;
+    align-items: center ;
+    flex-wrap: wrap;
+    /* height: 20px; */
+    margin-right: 10px;
+}
+
+.logo a{
+    margin-top: 5px;
+    padding-left: 10px;
+}
+
+.head-btn{
+    padding: 0px 0.4vw;
+    /* align-content: center; */
+    text-align: center;
+    background-color: rgb(32, 30, 30);
+    border-radius: 0px 50px 50px 0px;
+    border: none;
+    cursor: pointer; 
+    box-sizing: border-box;
+    background: none;
+}
+.head-btn:hover{
+    background-color: #222;
+    font-weight: 700;
+    /* border: 1px solid rgb(255, 255, 255); */
+    /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
+}
+
+.bg{
+    /* background: rgba(34, 33, 33, 0.719) url(https://static01.nyt.com/images/2015/10/24/opinion/24manguel/24manguel-superJumbo.jpg);  */
+    background-size: cover;
+    background-attachment: local;
+    background-blend-mode: darken;
+    /* animation: fade-in 0.5s ease-in; */
+    /* z-index: -100; */
+}
+
+
+.info:hover{
+    border: none;
+    background: white;
+    color: rgb(15, 15, 15);
+    width: 15em;
+    height: 4em;
+    cursor: pointer;
+    font-size: 13px;
+    /* border-radius: 3vh 0vh 0vh 3vh; */
+}
+
+.v-more:hover{
+    border: none;
+    background: white;
+    color: rgb(15, 15, 15);
+    width: 15em;
+    height: 4em;
+    cursor: pointer;
+    font-size: 13px;
+    /* border-radius: 3vh 0vh 0vh 3vh; */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    cursor: pointer;
+    background: rgb(0, 0, 0);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+.btn-outline {
+    background-color: transparent;
+    border: 1px #fff solid;
+  }
+  
+.btn:hover {
+    transform: scale(0.98);
+    background-color: rgb(253, 152, 0);
+  }
+  
+@keyframes slider {
+
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slidel {
+
+    0%{
+        opacity: 0.08;
+        transform: translateX(-400px);
+    }
+    
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes slided {
+
+    0%{
+        opacity: 0.1;
+        transform: translateY(-100px);
+    }
+    
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fade-in {
+    0%{
+        opacity: 0.7;
+        /* transform: translateY(-100px); */
+    }
+    50%{
+        opacity: 0.9;
+    }
+    100%{
+        opacity: 1;
+        /* transform: translateY(0px); */
+    }
+}
+
+
+
+/* Extra */
+.footer{
+    background-color: #14202b;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    padding: 3rem;
+}
+.footer__title{
+    font-size: 2rem;
+    margin-bottom: 1px;
+}
+.footer__content{
+      font-size: 1.5rem;
+      margin-bottom: 1px;
+}
+.footer__social{
+    margin-bottom: 4px;
+}
+.footer__icon{
+    font-size: 1rem;
+    color: #fff;
+    margin: 0 1px;
+    align-items: center;
+} 

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/utils.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: #000000e5;
+            background: url('https://www.detroitlabs.com/wp-content/uploads/2018/02/alfons-morales-YLSwjSy7stw-unsplash.jpg');
+            background-size: auto;
+            height: 100vh;
+
+        }
+
+        body::before {
+            content: "";
+            background-color: rgba(2, 4, 26, 0.616);
+            width: 100%;
+            height: 110vh;
+            position: absolute;
+        }
+
+        #login .container #login-row #login-column #login-box {
+            margin-top: 120px;
+            max-width: 600px;
+            height: 320px;
+            width: 25em;
+            height: 30em;
+            position: relative;
+            margin: 6% auto;
+            background-color: rgba(31, 31, 31, 0.884);
+            padding: 1em 3em;
+            border-radius: 25px;
+            box-sizing: border-box;
+            overflow: hidden;
+            border: 3px solid white;
+            z-index: 10;
+
+        }
+
+        #login .container #login-row #login-column #login-box #login-form {
+            padding: 20px;
+        }
+
+        #login .container #login-row #login-column #login-box #login-form #register-link {
+            margin-top: -85px;
+        }
+
+        .btn {
+            margin: auto;
+            display: block;
+            position: relative;
+            top: 15px;
+            font-weight: 600;
+            width: 100%;
+            background: transparent;
+            background: #222;
+            color: rgb(255, 255, 255);
+            /* background: linear-gradient(to right,#ff105f,#ffad06); */
+            /* box-shadow: 18px 18px 20px #000, -12px -12px 20px #292929; */
+            box-shadow: inset -2px -2px 2px 1px #ff7010, inset 2px 2px 2px 1px #ff9306;
+        }
+
+        .btn2 {
+            display: block;
+            position: relative;
+            top: 70px;
+            outline: none;
+        }
+
+        /* .btn:hover {
+            box-shadow: inset 8px 8px 20px #000, inset -12px -12px 20px #292929;
+            font-weight: 700;
+            background: rgb(0, 0, 0);
+        } */
+        .text-info {
+            color: white !important;
+            font-family: roboto;
+        }
+
+        .inpf {
+            width: 100%;
+            padding: 10px 0;
+            margin: 5px 0;
+            border-left: 0;
+            border-right: 0;
+            border-top: 0;
+            border-bottom: 1 solid #999;
+            outline: none;
+            background: transparent;
+            color: white;
+        }
+
+        .hehelog {
+            padding: 5px 20px;
+            cursor: pointer;
+            background: linear-gradient(to right, #ff3c00, #ffcc06);
+            border: 0;
+            outline: none;
+            position: relative;
+            float: left;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            display: block;
+            margin-top: 17px;
+            box-sizing: content-box;
+            left: -41px;
+            font-weight: 520;
+        }
+
+        .hehelog1 {
+            padding: 5px 20px;
+            cursor: pointer;
+            background: linear-gradient(to right, #ff3c00, #ffcc06);
+            border: 0;
+            outline: none;
+            position: relative;
+            float: left;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            display: block;
+            /* margin-top: 6px; */
+
+        }
+
+        .hehelog1 a,
+        .hehelog a {
+            color: white;
+        }
+
+        /* Media */
+        @media screen and (max-width:600px) {
+            #login .container #login-row #login-column #login-box {
+                width: auto;
+                max-width: 350px;
+                padding: 1em 2em;
+            }
+        }
+        @media screen and (max-width:350px) {
+            #login .container #login-row #login-column #login-box {
+                width: auto;
+                /* max-width: 350px; */
+                padding: 1em 0.5em;
+            }
+            .btn{
+                padding:10px 10px;
+            }
+        }
+    </style>
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+</head>
+
+<body>
+    <div id="login">
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+
+                    <div id="login-box" class="col-md-12" style="margin-top: 113px;">
+                        <form id="login-form" class="form" action="/userAccounts/loggingIn/" method="post">
+                            {% csrf_token %}
+                            <h3 class="text-center text-info">Login</h3>
+                            <div class="form-group" style="margin-top: 45px;">
+                                <!-- <label for="username" class="text-info">Username:</label><br> -->
+                                <input type="text" name="username" id="username" class="form-control inpf"
+                                    placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="password" class="text-info">Password:</label><br> -->
+                                <input type="password" name="password" id="password" class="form-control inpf"
+                                    placeholder="Enter Password">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn1 btn-info btn-md tglbtn"
+                                    value="Login">
+                            </div><br>
+                            {% if messages %}
+                            {% for message in messages %}
+                            {% if message.tags %}
+                            <script>
+                                alert("{{ message }}")
+                            </script> {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                            <div id="register-link" class="text-right">
+                                <a href="/userAccounts/registerScreen" class="btn btn2 btn-info btn-md tglbtn">Register here</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

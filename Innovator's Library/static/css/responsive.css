@@ -1,0 +1,149 @@
+@media screen and (max-width:400px){
+    body{
+        background-color: rgb(250, 35, 35)
+    }
+    header{
+        height: 25vh;
+        transition:  height 0.3s ease-out;
+    }
+    nav{
+        flex-direction: column;
+        
+    }
+
+    .logo{
+        justify-content: center;
+        margin: 2px 0px;
+
+    }
+    .logo a{
+        max-width: 15vh;
+        position: relative;
+        left: -38vw;
+        top: 0.7vh;
+    }
+    nav div.logo img{
+        margin-right: 88vw;
+        margin-bottom: 0.6vh;
+        margin-left: 4vw;
+        height: 2.4em;
+        width: 3.7em;
+    }
+    nav ul{
+        justify-content: center;
+    }
+
+    ul.tor,ul.tor_l{
+        padding: 2vh 0vw 0vh 3vw;
+    }
+
+    .ser{
+        margin: 10px 20vw;
+        position: absolute;
+        top:1vh;
+    }
+
+    .ser input{
+        height: 2.5em;
+        min-width: 120px;
+    } 
+
+    .btn{
+        height: 2.5em;
+    }
+    .btn img{
+        padding: 0.8vh 1vh 0vh 1vh;
+    }
+    
+    .vis{
+        opacity: 0;
+    }
+
+    .burg{
+        display: block;
+    }
+
+    .hei{
+        height: 10vh;
+    }
+
+    .sec1{
+        flex-direction: column;
+        height: 80%;
+        padding-top: 15%;
+    }
+
+    .sec-img img{
+        padding: 0em;
+        margin-top: 0px;
+        width: 20em;
+    }
+    .sec-cont {
+        flex: none;
+    }
+    .sec-cont-para p{
+        width: 90vw;
+           }
+    .showcase .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+
+    }
+
+    .showcase .card{
+        height: auto;
+        width: 300px;
+        margin:auto;
+        padding: 9%;
+    }
+    .showcase-text{
+        text-align: center;
+    }
+    .languages .container{
+        /* overflow: hidden; */
+        /* justify-content: flex-start; */
+        height: 60vh;
+    }
+
+    .container .card img  {
+        width: 80px;
+        height: 80px;
+        /* padding-left: 0.5em; */
+        /* padding-top: 20px; */
+        box-sizing: content-box;
+    }
+    .languages .card{
+        animation: fadecin 1s ease-in;
+        height: 30%;
+        /* padding-right: 20px; */
+    }
+    .footer{
+        height: 30vh;
+    }
+    div h1{
+        font-size:  30px; 
+    }
+    div .cpyrght{
+        font-size: 10px;
+    }
+
+    .footer nav{
+        font-size: 15px;
+    }
+
+    .footer .social{
+        font-size: 10px;
+    }
+    .footer .social .fab{
+        display: inline-block;
+        padding: 10px;
+    }
+    .con-details{
+        height:80vh;
+        padding-top:50vh;
+    }
+    /* .formbx{
+        width: 320px;
+        height: 480px;
+    } */
+}
